@@ -27,8 +27,10 @@ public class ConnectionServer {
                 try {
                     serverSocket = new ServerSocket(3333);
 
+
+                   //accept is a blocking operation and waits for a client to connect. once a client connects the client socket is obtained and we can either read or write data
                     Socket clientSocket = serverSocket.accept();
-                    serverSocket.setSoTimeout(3000);
+
 //                    BufferedReader inputReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                     PrintWriter outWriter = new PrintWriter(clientSocket.getOutputStream(),true);
 

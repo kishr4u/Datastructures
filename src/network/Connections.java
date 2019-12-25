@@ -40,7 +40,8 @@ public class Connections {
                 //socket.setSoTimeout(30000);
 
                 //if you set a smaller time out below and snce the server sleep for 20 secs you will get sockettimedout exception
-                socket.setSoTimeout(200000);
+                socket.setSoTimeout(2000);
+
                 System.out.println("invoked ");
                 DataInputStream outWriter = new DataInputStream(socket.getInputStream());
                 System.out.println("finished ");
