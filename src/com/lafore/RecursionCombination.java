@@ -7,24 +7,25 @@ public class RecursionCombination {
     static int i = 0;
     public StringBuffer buffer = new StringBuffer();
 
-    public static void doRecursion(int n, int k, int i){
+    public static void doRecursion(int n, int k){
 
-        if( n<= 0 || k < 0 || k>n){
+        System.out.println("loop" + n + ","+ k+ ","+ ++i);
+        if( n<= 0 || k <=0 ){
             return;
         }
-        System.out.println("loop" + n + ","+ k);
+
 
         if(n==1 && n >=k){
-            System.out.println("FOUND COMBINATION" + n + ","+ k);
+            System.out.println("FOUND COMBINATION" + n + ","+ k+","+ ++i);
 
         }
-        doRecursion(n-1,k,++i);
+        doRecursion(n-1,k);
 
-        doRecursion(n-1,k-1,++i);
+        doRecursion(n,k-1);
     }
 
     public static void main(String[] args){
-        doRecursion(5,3,1);
+        doRecursion(5,5);
     }
 
 }

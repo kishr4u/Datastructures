@@ -1,16 +1,28 @@
 package com.lafore;
 
-public class Array {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class List {
 
     private String[] a = new String[100];
     public int[][] i = {{1,1},{2,2}};//unused
     int position = 0;
+
 
     //O(1)
     public void insert(String s){
         if(position < a.length) {
             a[position] = s;
             position++;
+        }else{
+            String[] copy = new String[position*2];//create an array of double the capacity
+            for (int i = 0; i < a.length; i++) {
+                copy[i] = a[i];
+
+            }
+            a= copy;
+
         }
     }
 
@@ -29,6 +41,7 @@ public class Array {
             }
             a[k] = null;
             position--;
+
         }
 
     }

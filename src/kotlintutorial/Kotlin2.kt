@@ -1,13 +1,20 @@
 package kotlintutorial
 
+
+
 fun main(args: Array<String>) {
     //you can have array of multiple types
     val things = arrayOf("judi", "mudi");
+    //var nullobj1:String = null;you cannot define a String as null here as Strings are non nullable
+    val an= "stst";
     val listThings = listOf("Ramy","jumy");
     val mapThings = mapOf("key1" to "val1","key2" to "val2")
     for (thing in things){
         println(thing)
     }
+
+
+    //listThings.add("sss"); will have compilation error since by default list is immutable
 
     //lambda similar to java. u can use forEachIndexed if u want index also
     things.forEach { s-> print(s) }

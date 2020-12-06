@@ -15,7 +15,7 @@ public class RecursionAnagram {
 //        }
         for(int k=0; k < size; k++){
             doAnagram(size -1);
-            if(size==2) {//to eliminate duplicates
+            if(size==1) {//to eliminate duplicates
                 System.out.println("Execution :" + size + "count :" + ++i);
                 System.out.println(anag);
             }

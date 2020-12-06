@@ -54,4 +54,70 @@ public class QuickSort {
 
 
     }
+
+    public static void main(String[] args) {
+        QuickSort q = new QuickSort();
+        q.quick1(0, q.arr.length-1, q.arr);
+        for(int i: q.arr){
+            System.out.println("FINAL "+ i);
+        }
+    }
+
+    public void quick1(int left, int right, int[] arr){
+
+        if(right <= left){
+            return;
+        }
+
+        System.out.println("INVOKE POART " + arr[right]);
+        int part = partition(left, right,  arr);
+        System.out.println("AFTER POART " + part);
+        for(int i: arr){
+            System.out.println(i);
+        }
+        quick1(left,part-1, arr);
+        quick1(part, right, arr);
+
+    }
+
+    public int partition(int left, int right,  int[] arr){
+
+        int leftPtr=left;
+        int rightPtr= right-1;
+        int pos=0;
+
+        while(rightPtr > leftPtr){
+            //arr[right] is pivot
+            if(arr[rightPtr] >= arr[right]){
+               rightPtr--;
+
+            }else{
+                if(arr[leftPtr] > arr[right]){
+                    int temp = arr[leftPtr];
+                    arr[leftPtr] = arr[rightPtr];
+                    arr[rightPtr] = temp;
+                    rightPtr--;
+                    leftPtr++;
+                }else{
+                    leftPtr++;
+
+                }
+            }
+
+
+        }
+
+        //sometimes left part could be greater or sometimes leftPart+1 will be greater
+        if(arr[leftPtr] > arr[right]){
+            pos=leftPtr;
+        }else{
+            pos=leftPtr+1;
+        }
+
+        int temp = arr[pos];
+        arr[pos] = arr[right];
+        arr[right] = temp;
+
+        return pos;
+    }
 }

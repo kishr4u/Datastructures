@@ -7,7 +7,7 @@ class Node1{
     }
     int data=0;
     Node1 next;
-    Node1 prev;
+    Node1 prev;//doubly linked list also has prev to move to the prev element which is needed in some applications.
 
 }
 

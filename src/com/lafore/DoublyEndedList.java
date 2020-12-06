@@ -11,7 +11,13 @@ class Node{
 }
 public class DoublyEndedList {
 
-
+    //Double ended list has both first and last to store the fist and last items of the list
+    /**
+     * Doubly Linked List as Basis for Deques
+     * A doubly linked list can be used as the basis for a deque, mentioned in the preceding
+     * chapter. In a deque you can insert and delete at either end, and the doubly linked
+     * list provides this capability.
+     */
     Node first;
     Node last;
 
